@@ -12,9 +12,9 @@ The API backend has been deployed by Heroku and can be found at https://evening-
 
 ### Login Functionality
 
-Many features require a user to log in. In the interests of simplicity no users have a password. To log in as a user please select a user from the drop down in the menu bar.
+Many features require a user to log in. In the interests of simplicity users have no password. To log in as a user please select a user from the drop down in the menu bar.
 
-It is also possible that new users can also sign up. You will be prompted to sign up the first time you visit Northcoders News, or by clicking the sign up tab in the menu.
+It is also possible for new users to sign up. You will be prompted to sign up the first time you visit Northcoders News, or by clicking the sign up tab in the menu.
 
 ## Getting Started
 
