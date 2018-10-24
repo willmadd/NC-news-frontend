@@ -1,0 +1,15 @@
+{
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "parser": "babel-eslint",
+    "globals": {
+        "localStorage": true
+  
+    }
+   
+}

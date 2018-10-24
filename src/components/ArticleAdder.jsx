@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import TopicHeader from "./Topicheader";
 import PropTypes from "prop-types";
 import * as api from "../api";
+import "./ArticleAdder.css";
 
 class ArticleAdder extends Component {
   state = {
@@ -11,57 +11,53 @@ class ArticleAdder extends Component {
   render() {
     return (
       <div>
-        <TopicHeader text={this.props.topic} />
-
-{this.props.user?
-  
-<div>
-
-        <h1>Add an Article...</h1>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Title
-            <input
-              type="textarea"
-              id="titleInput"
-              name="title"
-              onChange={this.handleChange}
-              value={this.state.title}
-            />
-          </label>
-          <label>
-            Article
-            <input
-              type="textarea"
-              id="bodyInput"
-              name="body"
-              onChange={this.handleChange}
-              value={this.state.body}
-            />
-          </label>
-          <input type="submit" />
-        </form>
-</div>
-:<h1>Please Log in to submit an article</h1>}
-
-
-
-
+        <div className="faderscreen">
+          <div className="addArticleBox">
+            {this.props.user && (
+              <div >
+                <h1>Add an Article...</h1>
+                <form onSubmit={this.handleSubmit} className="addArticlesContainer">
+                  <label>
+                    Title:
+                    <input
+                      type="textarea"
+                      id="titleInput"
+                      name="title"
+                      onChange={this.handleChange}
+                      value={this.state.title}
+                    />
+                  </label>
+                  <label>
+                    Article:
+                    <textarea
+                      type="textarea"
+                      cols="50"
+                      rows="10"
+                      id="bodyInput"
+                      name="body"
+                      onChange={this.handleChange}
+                      value={this.state.body}
+                    />
+                  </label>
+                  <div className="buttonHolder">
+                  <input className= "addArticleButton" id="submitButton" type="submit" />
+                  <button className= "addArticleButton" id="cancelButton" onClick={this.props.cancel}>Cancel</button>
+                  </div>
+                </form>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     );
   }
 
   handleChange = event => {
-    if (event.target.name === "title") {
-      this.setState({
-        title: event.target.value
-      });
-    } else if (event.target.name === "body") {
-      this.setState({
-        body: event.target.value
-      });
-    }
+    this.setState({
+      [event.target.name]: event.target.value
+    })
   };
+
 
   handleSubmit = event => {
     event.preventDefault();
@@ -71,27 +67,24 @@ class ArticleAdder extends Component {
       created_by: this.props.user
     };
 
-    api
-      .postArticle(newArticleBody, this.props.topic)
-      .then(res => {
-          this.props.addArticle(res);
-      });
+    api.postArticle(newArticleBody, this.props.topic).then(res => {
+      res.article.comment=0
+      this.props.addArticle(res);
+    });
 
     this.setState({
       body: "",
       title: ""
     });
+    this.props.cancel();
   };
 }
 
-
 ArticleAdder.propTypes = {
-    topic: PropTypes.string.isRequired,
-    addArticle: PropTypes.func.isRequired,
-    user: PropTypes.string
-
-  };
-  
-
+  topic: PropTypes.string.isRequired,
+  addArticle: PropTypes.func.isRequired,
+  user: PropTypes.string,
+  cancel: PropTypes.func
+};
 
 export default ArticleAdder;

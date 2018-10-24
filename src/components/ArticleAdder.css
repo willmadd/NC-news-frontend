@@ -1,0 +1,87 @@
+.faderscreen {
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 10001;
+    height: 100vh;
+  }
+
+  .addArticleBox {
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    position: absolute;
+    top: 15%;
+    border: 1px solid black;
+    border-radius: 4px;
+    z-index: 10000;
+    background-color: #e8e8e8;
+    padding: 30px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3),
+      inset 0px 1px 0px rgba(255, 255, 255, 0.25);
+    background-position: bottom;
+    background-repeat: repeat-x;
+    /* padding-bottom: 100px; */
+    animation: dropin 1s 1;
+    color: black !important;
+    font-family: 'Signika', sans-serif;
+  }
+.addArticlesContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+  .buttonHolder{
+    width:100%;
+    height:20px;
+    display: flex;
+    height:30px;
+    margin-top:20px;
+}
+
+.addArticleButton{
+    flex:1;
+    height:30px;
+    border-radius:5px;
+    border: 1px solid black;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.3), inset 0px 1px 0px rgba(255,255,255,0.25);
+    cursor:pointer;
+}
+
+.signupbutton:hover{
+    box-shadow: 0px 0px 0px rgba(0,0,0,0.3), inset 0px 0px 0px rgba(255,255,255,0.25);
+    transition: 0.1s;
+}
+
+#cancelButton{
+    background-color: tomato;
+}
+
+#submitButton{
+    background-color: olivedrab;
+}
+
+#disabledSubmitButton{
+    background-color: #e8e8e8;
+    pointer-events: none;
+    color:darkgray;
+}
+
+#titleInput{
+    width:600px;
+}
+
+#bodyInput{
+    width:600px;
+    height:100px;
+}
+
+textarea, input{
+    font-family: 'Signika', sans-serif;
+    line-height: 16px;
+    font-size:16px;
+}

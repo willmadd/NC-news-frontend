@@ -24,8 +24,8 @@
 .buttonHolder{
     width:100%;
     height:20px;
-display: flex;
-height:30px;
+    display: flex;
+    height:30px;
 }
 
 .signupbutton{

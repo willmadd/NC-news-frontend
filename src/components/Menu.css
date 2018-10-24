@@ -1,12 +1,11 @@
 .mainNav {
   background-color: #3f51b5;
-  font-family: "Roboto", sans-serif;
   padding: 0px;
   font-size: 10px;
   color: #c5cae9;
   display: flex;
   justify-items: space-around;
-  height:45px;
+  height: 45px;
 }
 
 .menuItem {
@@ -14,47 +13,43 @@
   cursor: pointer;
   box-sizing: border-box;
   text-align: center;
+  padding: 15px;
 }
 
 .styled-select.slate {
-  height: 15px;
-  width: 140px;
+  height: 45px;
+}
+
+.styled-select {
+  height: 45px;
+  overflow: hidden;
 }
 
 .styled-select select {
   background: transparent;
   border: none;
   font-size: 20px;
-  height: 14px;
+  height: 45px;
   padding: 0px;
-  width: 168px;
-  font-family: "Roboto", sans-serif;
   color: #c5cae9;
   font-weight: 800;
 }
 
-
 select:focus {
-  outline:none;
+  outline: none;
 }
 
-.styled-select {
-  height: 10px;
-  overflow: hidden;
-  width: 140px;
-}
 a {
   text-decoration: none;
 }
 
-nav, #signupbutton button {
-  font-family: "Roboto", sans-serif;
+nav,
+#signupbutton button {
   font-size: 12px;
 }
 
-
-#signupbutton.menuitem{
-  margin-top:70px;
+#signupbutton.menuitem {
+  margin-top: 70px;
 }
 
 nav ul {
@@ -67,15 +62,14 @@ nav ul {
 nav li {
   display: block;
   float: left;
-  padding: 15px;
+
   position: relative;
   text-decoration: none;
   transition-duration: 0.5s;
-  width:100px;
+  width: 100px;
 }
 
-
-nav li:hover{
+nav li:hover {
   background: darkblue;
   cursor: pointer;
 }
@@ -91,7 +85,7 @@ nav ul li ul {
   display: none;
 }
 
-nav ul li:hover > ul{
+nav ul li:hover > ul {
   visibility: visible;
   opacity: 1;
   display: block;
@@ -101,44 +95,42 @@ nav ul li ul li {
   clear: both;
   width: 100%;
   box-sizing: border-box;
+  padding:15px;
 }
 
 .dropdown {
   z-index: 1000;
 }
 
-#signupbutton{
-  margin:0px;
-  padding:03px;
-  padding-left:10px;
-  padding-bottom:0px;
-  padding-top:1px;
-  
+#signupbutton {
+  margin: 0px;
+  padding: 03px;
+  padding-left: 10px;
+  padding-bottom: 0px;
+  padding-top: 1px;
 }
 
-#signupbutton button{
+#signupbutton button {
   cursor: pointer;
   background-color: transparent;
-  border:0px;
-  width:100px;
-  margin:0px;
-  padding:0px;
-  height:42px;
-  font-family: "Roboto", sans-serif;
+  border: 0px;
+  width: 100px;
+  margin: 0px;
+  padding: 0px;
+  height: 42px;
+  font-family: "Signika", sans-serif;
   color: #c5cae9;
   text-align: left;
-
-
+  text-align: center;
 }
 
-.menuItem, #navSelect{
-  font-family: "Roboto", sans-serif;
+.menuItem,
+#navSelect {
+  font-family: "Signika", sans-serif;
   font-size: 12px;
 }
 
-#navSelect{
+#navSelect {
   font-weight: 300;
-padding:0px;
-margin-top:0px;
-
+  height: 45px;
 }

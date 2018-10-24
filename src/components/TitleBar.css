@@ -16,6 +16,12 @@
 
 .ncninja{
 height:50px;
-/* border-radius:50%; */
-/* background-color: #3f51b5; */
+cursor: pointer;
 }
+
+.ncninja:hover{
+    height:50px;
+    background-color: #CCCCCC;
+    transition:0.2s;
+    border-radius:50%;
+    }

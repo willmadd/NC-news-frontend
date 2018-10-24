@@ -1,43 +1,14 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="561px" height="561px" viewBox="0 0 561 561" style="enable-background:new 0 0 561 561;" xml:space="preserve">
-<g>
-	<g id="thumb-down">
-		<path d="M357,25.5H127.5c-20.4,0-38.25,12.75-45.9,30.6L5.1,237.15C2.55,242.25,0,247.35,0,255v48.45l0,0V306
-			c0,28.05,22.95,51,51,51h160.65l-25.5,117.3c0,2.55,0,5.101,0,7.65c0,10.2,5.1,20.399,10.2,28.05l28.05,25.5l168.3-168.3
-			c10.2-10.2,15.3-22.95,15.3-35.7v-255C408,48.45,385.05,25.5,357,25.5z M459,25.5v306h102v-306H459z"/>
-	</g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 351 352" style="enable-background:new 0 0 351 352;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#000000;stroke-width:18;stroke-miterlimit:10;}
+</style>
+<circle class="st0" cx="175" cy="176" r="166.5"/>
+<path class="st0" d="M223.3,92.5h33.3c4.3,0,7.8,3.5,7.8,7.8v79.3c0,4.3-3.5,7.8-7.8,7.8h-33.3c-4.3,0-7.8-3.5-7.8-7.8v-79.3
+	C215.5,96,219,92.5,223.3,92.5z"/>
+<circle cx="241" cy="165" r="6"/>
+<path class="st0" d="M215.5,179.5c0,0-47,28-47,70s-26,18-29-6s3-44,3-44l-50-1c0,0-27-9-3-26c0,0-13-16,5-25c0,0-14-19,5-24
+	c0,0-13-17,7-24h88c0,0,12,13,21,0"/>
 </svg>

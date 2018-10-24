@@ -39,7 +39,6 @@ class SignUp extends Component {
               placeholder="Name"
               className="newUserInput"
             />
-
             <input
               type="text"
               name="username"
@@ -48,7 +47,6 @@ class SignUp extends Component {
               placeholder="User Name"
               className="newUserInput"
             />
-       
             <input
               type="text"
               name="avatarurl"
@@ -57,11 +55,9 @@ class SignUp extends Component {
               placeholder="Avatar URL"
               className="newUserInput"
             />
-
-
               <div className="buttonHolder">
               <button className="signupbutton" id={this.state.submit?"submitButton":"disabledSubmitButton"} onClick={this.handleSubmit}>Sign Me Up!</button>
-              <button className="signupbutton" id="cancelButton" onClick={this.props.closeWelcome}>I'll Sign Up Later!</button>
+              <button className="signupbutton" id="cancelButton" onClick={this.props.closeWelcome}>{"I'll Sign Up Later!"}</button>
               </div>
         </form>
       </div>
@@ -88,15 +84,22 @@ this.props.updateUsers(user);
     if (!this.state.usernames.includes(event.target.value.toLowerCase()) && (event.target.value)) {
       userNameAvailable = true;
     }
-    let submit = false
-    if(userNameAvailable===true && this.state.name.length > 0 && this.state.username.length > 0 && this.state.avatarurl.length>0){
-      submit = true
-    }
-    this.setState({
+
+    this.setState(
+      {
       [event.target.name]: event.target.value,
       userNameAvailable,
-      submit
-    });
+    },
+    ()=>{
+      let submit = false
+      if(userNameAvailable===true && this.state.name.length > 0 && this.state.username.length > 0 && this.state.avatarurl.length>0){
+        submit = true
+      }
+      this.setState({
+        submit
+      })
+    }
+    );
 
   };
 }

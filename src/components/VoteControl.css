@@ -1,17 +1,12 @@
 .voteControl{
     display:flex;
-    /* background-color: aqua; */
-    /* width:30px; */
+
 }
 
 .voteImg{
-    /* background-color: bisque;
-    background-image: url(/images/thumb-down-button.svg);
-    background-size: 20px 20px; */
     width: 40px;
     height:40px;
     padding:5px 10px;
-    /* background: no-repeat; */
     border-width:0px;
     background-color: transparent;
     border-radius:50%;
@@ -26,5 +21,14 @@ transition:0.2s;
 .articleInteractive p {
     text-align: justify;
     margin:5px;
-    /* line-height:15px; */
   }
+
+
+button:focus{
+    outline: none;
+}
+
+.disabledButton{
+    opacity: 0.3;
+    pointer-events: none;
+}

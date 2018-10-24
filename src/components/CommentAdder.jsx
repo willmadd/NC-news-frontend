@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 class CommentAdder extends Component {
   state = {
     body: "",
-    user: "5ba375968568c05a1cbedad0"
+    user: ""
   };
   render() {
     return (

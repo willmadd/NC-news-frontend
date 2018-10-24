@@ -13,47 +13,40 @@ import ErrorPage from "./components/ErrorPage";
 
 class App extends Component {
   state = {
-    user: "",
+    user: ""
   };
-
 
   render() {
     return (
       <div>
-        <Menu changeUser={this.changeUser} />
+        <Menu changeUser={this.changeUser} user={this.state.user} />
         {this.state.viewWelcome && (
           <Welcome
-          closeWelcome={this.closeWelcome}
-          changeUser={this.changeUser}
+            closeWelcome={this.closeWelcome}
+            changeUser={this.changeUser}
           />
         )}
         <TitleBar />
-          <Switch>
-        <Route exact path="/" component={Articles} />
-        {/* <Route exact path="/topics/:topic_slug" component={Articles} />}/> */}
-        <Route
-          exact
-          path="/articles/:article_id"
-          render={routerProps => (
-            <Article {...routerProps} user={this.state.user} />
+        <Switch>
+          <Route exact path="/" component={Articles} />
+          <Route
+            exact
+            path="/articles/:article_id"
+            render={routerProps => (
+              <Article {...routerProps} user={this.state.user} />
             )}
-            />
-
-
- <Route
-          exact
-          path="/topics/:topic_slug"
-          render={routerProps => (
-            <Articles {...routerProps} user={this.state.user} />
+          />
+          <Route
+            exact
+            path="/topics/:topic_slug"
+            render={routerProps => (
+              <Articles {...routerProps} user={this.state.user} />
             )}
-            />
-
-
-
-        <Route exact path="/users/:username" component={Users} />
-        <Route exact path="/signup" component={SignUp} />
-        <Route exact path="/error" component={ErrorPage}/>
-        <ErrorPage />
+          />
+          <Route exact path="/users/:username" component={Users} />
+          <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/error" component={ErrorPage} />
+          <ErrorPage />
         </Switch>
       </div>
     );
@@ -67,8 +60,8 @@ class App extends Component {
 
   closeWelcome = () => {
     this.setState({
-      viewWelcome:false
-    })
+      viewWelcome: false
+    });
   };
 }
 

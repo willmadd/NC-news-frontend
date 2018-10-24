@@ -11,20 +11,18 @@ import Loader from "./Loader";
 import ArticleAdder from "./ArticleAdder";
 import PropTypes from "prop-types";
 
-
-
 class Articles extends Component {
   state = {
     articles: [],
-    error: null
-    // voteChange: 0
+    error: null,
+    showAddArticle: false
   };
 
   componentDidMount = () => {
     this.getArticles(this.props.match.params.topic_slug);
   };
 
-  componentDidUpdate = (prevProps, prevState) => {
+  componentDidUpdate = prevProps => {
     if (
       prevProps.match.params.topic_slug !== this.props.match.params.topic_slug
     ) {
@@ -33,26 +31,56 @@ class Articles extends Component {
   };
 
   render() {
-    if(this.state.error) {
-      return <Redirect to=
-      {{
-        pathname:"/error",
-        state:{
-          message: this.state.error.message
-        }
-      }}
-      />
+    if (this.state.error) {
+      return (
+        <Redirect
+          to={{
+            pathname: "/error",
+            state: {
+              message: this.state.error.message
+            }
+          }}
+        />
+      );
     }
+
     return (
       <div className="bodycontent">
         {!this.state.articles[0] && <Loader />}
-        {this.props.match.params.topic_slug && (
-          <ArticleAdder
-            topic={this.props.match.params.topic_slug}
-            addArticle={this.addArticle}
-            user={this.props.user}
-          />
-        )}
+        {this.props.match.params.topic_slug && 
+          <div>
+                          <div className="logInContainer">
+
+<Topicheader text={`${this.state.articles.length} articles about ${this.props.match.params.topic_slug}`}/>
+</div>
+            {(this.props.user ? (
+              <div className="logInContainer">
+                <button
+                  className="addArticlesButton"
+                  onClick={this.showAddArticle}
+                >
+                  Add an Article
+                </button>
+              </div>
+            ) : (
+              <div className="logInContainer">
+                <button className="addArticlesButtonDisabled">
+                  Log in to post an article
+                </button>
+              </div>
+            ))}
+          </div>
+        }
+
+        {this.state.showAddArticle &&
+          this.props.user && (
+            <ArticleAdder
+              topic={this.props.match.params.topic_slug}
+              addArticle={this.addArticle}
+              user={this.props.user}
+              cancel={this.showAddArticle}
+            />
+          )}
         <ul className="articleUL">
           {sortBy([...this.state.articles], article => {
             return new moment(article.created_at);
@@ -64,8 +92,11 @@ class Articles extends Component {
                   <Link to={`/articles/${article._id}`}>
                     <img
                       className="articleCardImage"
-                      src={`https://picsum.photos/600/200&${article._id}`}
+                      src={`/images/topics/${article.belongs_to}/${Math.floor(
+                        Math.random() * 9
+                      ) + 1}.jpg`}
                       alt="title"
+                      height="200"
                     />
                   </Link>
                   <Link to={`/topics/${article.belongs_to}`}>
@@ -123,27 +154,31 @@ class Articles extends Component {
 
   getArticles = topic => {
     if (topic) {
-      api.getArticlesByTopic(topic).then(articles => {
-        this.setState({
-          articles
-        });
-      })
-      .catch(error=>{
-        this.setState({
-          error
+      api
+        .getArticlesByTopic(topic)
+        .then(articles => {
+          this.setState({
+            articles
+          });
         })
-      });
+        .catch(error => {
+          this.setState({
+            error
+          });
+        });
     } else {
-      api.getAllArticles().then(articles => {
-        this.setState({
-          articles
-        });
-      })
-      .catch(error=>{
-        this.setState({
-          error
+      api
+        .getAllArticles()
+        .then(articles => {
+          this.setState({
+            articles
+          });
         })
-      });
+        .catch(error => {
+          this.setState({
+            error
+          });
+        });
     }
   };
 
@@ -153,11 +188,17 @@ class Articles extends Component {
       articles: newArticles
     });
   };
+
+  showAddArticle = () => {
+    this.setState({
+      showAddArticle: !this.state.showAddArticle
+    });
+  };
 }
 
-
 Articles.propTypes = {
-  user: PropTypes.string
+  user: PropTypes.string,
+  match: PropTypes.object
 };
 
 export default Articles;
